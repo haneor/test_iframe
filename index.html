@@ -10,9 +10,18 @@
     <title>아이프레임 테스트 </title>
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+    <script>
+      function updateIframe() {
+        const input = document.getElementById('inputId').value;
+        const iframe = document.getElementById('myIframe');
+        iframe.src = `https://cloud-staging.meissa.ai/external/${input}`;
+      }
+    </script>
   </head>
   <body>
     <h3>외부 사이트에서 메이사 접속 테스트</h3>
-    <iframe width="100%" height="800px" src="https://cloud-staging.meissa.ai/external/2a9a2d7b1c" title="Meissa web site"></iframe>
+    <input type="text" id="inputId" placeholder="코드 입력" />
+    <button onclick="updateIframe()">새로 고침</button>
+    <iframe width="100%" height="800px" src="https://cloud-staging.meissa.ai/external/" title="Meissa web site"></iframe>
   </body>
 </html>
